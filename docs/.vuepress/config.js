@@ -5,7 +5,6 @@ module.exports = {
   base: '/', // 设置站点根路径 (default /) 代码部署到github后要改, 如github.io/howe/(base: '/howe/') 注意：base 属性的值总是以 / 开始并以 / 结束
   title: '稻香',
   description: '对未来最大的慷慨是把一切献给现在！',
-  repo: 'github.com', // 通过设置 repo属性，VuePress 会在导航栏中添加一个 Github 仓库的链接
   dest: './dist', // 设置输出目录
   port: 2020, // 端口
   head: [
