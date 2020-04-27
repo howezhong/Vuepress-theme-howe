@@ -1,0 +1,39 @@
+// 单行文本
+@mixin ellipse-single() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// 多行文本
+@mixin ellipse-more($line: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 文本占位符样式重置
+@mixin placeholder($color: $input-color-placeholder) {
+  // Firefox 19+
+  // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin flex($direction: column, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}

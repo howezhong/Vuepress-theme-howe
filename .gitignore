@@ -1,0 +1,14 @@
+node_modules
+*.log
+dist
+docx
+.history
+.DS_Store
+.vscode
+.idea
+.temp
+
+yarn.lock
+package-lock.json
+
+secret.js

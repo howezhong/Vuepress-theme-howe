@@ -1,0 +1,24 @@
+.btn {
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 18px;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 3px;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+.btn-success {
+  background-color: #1e9fff;
+  &:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+  }
+}

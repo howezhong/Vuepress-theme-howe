@@ -1,0 +1,49 @@
+.z-sidebar-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: $header-zIndex-mobile;
+  width: $sidebar-width;
+  height: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #fff;
+  // background-image: url("~@/assets/aside.jpg");
+  // background-position: center;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+.z-sidebar-logo {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 0;
+  & > a {
+    display: block;
+  }
+  .avatar {
+    display: block;
+    width: calc(#{$sidebar-width} - #{$space * 2});
+    margin: auto;
+  }
+}
+.is-open-sidebar {
+  .z-sidebar-wrapper {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
+  }
+  .popup-cover {
+    display: block !important;
+  }
+}
+.is-close-sidebar {
+  .z-sidebar-wrapper {
+    transition: transform 0.3s ease;
+  }
+}
+@media screen and (max-width: $md) {
+  .z-sidebar-wrapper {
+    transform: translateX(-100%);
+  }
+}

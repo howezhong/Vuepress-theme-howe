@@ -1,0 +1,17 @@
+@import "~normalize.css/normalize";
+@import "../assets/font/iconfont.css";
+@import "~@/reset";
+@import "~@/variable";
+@import "~@/mixin";
+@import "~@/btn";
+@import "~@/common";
+// component
+@import "~@/component/zMain";
+@import "~@/component/zHome";
+@import "~@/component/zSidebar";
+@import "~@/component/zHeader";
+@import "~@/component/zPost";
+@import "~@/component/zContact";
+// code
+@import "~@/code.scss";
+@import "~@/custom-block.scss";

@@ -1,0 +1,18 @@
+.z-header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $header-zIndex;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  padding: 0 $space;
+  background-color: $header-zIndex-bj-color-mobile;
+  box-sizing: border-box;
+  & > span {
+    color: #fff;
+    font-size: 30px;
+  }
+}

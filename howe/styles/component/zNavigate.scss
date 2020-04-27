@@ -1,0 +1,77 @@
+@import "~@/variable";
+.z-navigate-container {
+  overflow: hidden;
+}
+.z-navigate-content {
+  margin: $padding-top 1rem 1rem;
+}
+.z-panel-wrapper {
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  & > .title {
+    padding: 16px 20px;
+    border-bottom: 1px solid $content-color-border;
+    color: #333;
+    font-size: 16px;
+  }
+}
+.panel-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.panel-cell {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(25% - #{$space});
+  min-height: 100px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: $space / 2;
+  border: 1px solid $content-color-border;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0px 0px 10px 3px $content-color-border;
+  }
+  .link-title {
+    color: $post-title-color;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .link-title,
+  .link-desc {
+    display: block;
+  }
+  .link-desc {
+    font-size: 12px;
+    color: #a2a8a2;
+    line-height: 1.5em;
+  }
+}
+.panel-empty {
+  width: 100%;
+  text-align: center;
+  color: $font-color-empty;
+}
+@media screen and (max-width: $xl1228) {
+  .panel-cell {
+    width: calc(33.333% - #{$space});
+  }
+}
+@media screen and (max-width: $lg) {
+  .panel-cell {
+    width: calc(50% - #{$space});
+  }
+}
+@media screen and (max-width: $sm) {
+  .panel-cell {
+    width: 100%;
+  }
+}

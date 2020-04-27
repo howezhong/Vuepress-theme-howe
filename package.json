@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "name": "vuepress-theme-blog-howe",
+  "version": "1.0.0",
+  "description": "Blog theme for vuepress",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "serve": "vuepress dev docs --cache .cache --no-cache --temp .temp",
+    "build": "vuepress build docs",
+    "deploy": "npm run build && bash deploy.sh",
+    "debug": "vuepress dev -t temp --no-clear-screen --debug docs",
+    "info": "npx vuepress info",
+    "view-info": "vuepress view-info docs --temp .temp"
+  },
+  "keywords": [
+    "vue",
+    "vuepress",
+    "theme",
+    "blog"
+  ],
+  "author": {
+    "name": "zhonghw",
+    "email": "214206783@qq.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howe/issues"
+  },
+  "devDependencies": {
+    "sass": "^1.24.3",
+    "sass-loader": "^8.0.0",
+    "vuepress": "^1.4.1"
+  },
+  "dependencies": {
+    "leancloud-storage": "^4.0.1",
+    "normalize.css": "^8.0.1",
+    "valine": "^1.3.10"
+  }
+}
