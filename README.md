@@ -2,7 +2,7 @@
 
 ## Introduction
 
-* [Live Demo](https://)
+* [Live Demo](https://howezhong.github.io/howe/)
 
 ## Quick start
 
@@ -20,6 +20,9 @@ npm run dev
 
 # build
 npm run build
+
+# deploy
+npm run deploy
 ```
 
 ## 文章配置
