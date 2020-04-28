@@ -27,7 +27,7 @@ module.exports = {
     editLinks: true,
     editLinkText: '在 GitHub 上编辑此页',
     publishUpdated: '发表于',
-    lastUpdated: '最后更新于',
+    lastUpdated: '更新于',
     nav: [
       { text: '首页', link: '/' },
       { text: '文章', link: '/post/' },
