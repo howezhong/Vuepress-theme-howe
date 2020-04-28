@@ -44,7 +44,7 @@ export const DateFormat = (timestamp = '', joiner = '') => {
   const minutes = zero(strTime.getMinutes())
   const seconds = zero(strTime.getSeconds())
   if (joiner) {
-    return `${year}${joiner}${zero(month)}${joiner}${zero(date)} ${hours}:${minutes}:${seconds}`
+    return `${year}${joiner}${month}${joiner}${date} ${hours}:${minutes}:${seconds}`
   } else {
     return { year, month, date, hours, minutes, seconds }
   }
