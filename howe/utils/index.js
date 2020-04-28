@@ -115,103 +115,26 @@ function resolvePath (relative, base, append) {
 }
 
 /**
- * @param { Page } page
  * @param { string } regularPath
- * @param { SiteData } site
- * @param { string } localePath
  * @returns { SidebarGroup }
  */
-export function resolveSidebarItems (page, regularPath, site, localePath) {
-  const { pages, themeConfig } = site
+export function resolveSidebarItems (regularPath, site) {
+  const { pages } = site
 
-  const localeConfig = localePath && themeConfig.locales
-    ? themeConfig.locales[localePath] || themeConfig
-    : themeConfig
-
-  const pageSidebarConfig = page.frontmatter.sidebar || localeConfig.sidebar || themeConfig.sidebar
-  if (pageSidebarConfig === 'auto') {
-    return resolveHeaders(page)
-  }
-
-  const sidebarConfig = localeConfig.sidebar || themeConfig.sidebar
-  if (!sidebarConfig) {
-    return []
-  } else {
-    const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig)
-    return config
-      ? config.map(item => resolveItem(item, pages, base))
-      : []
-  }
-}
-
-/**
- * @param { Page } page
- * @returns { SidebarGroup }
- */
-function resolveHeaders (page) {
-  const headers = groupHeaders(page.headers || [])
-  return [{
-    type: 'group',
-    collapsable: false,
-    title: page.title,
-    path: null,
-    children: headers.map(h => ({
-      type: 'auto',
-      title: h.title,
-      basePath: page.path,
-      path: page.path + '#' + h.slug,
-      children: h.children || []
-    }))
-  }]
-}
-
-export function groupHeaders (headers) {
-  // group h3s under h2
-  headers = headers.map(h => Object.assign({}, h))
-  let lastH2
-  headers.forEach(h => {
-    if (h.level === 2) {
-      lastH2 = h
-    } else if (lastH2) {
-      (lastH2.children || (lastH2.children = [])).push(h)
-    }
+  const pageSidebarConfig = pages.filter(page => {
+    const { isHide, date } = page.frontmatter
+    if (isHide || !date) return
+    return page
   })
-  return headers.filter(h => h.level === 2)
+  return pageSidebarConfig
+    ? pageSidebarConfig.map(item => resolveItem(item, pages, regularPath))
+    : []
 }
 
 export function resolveNavLinkItem (linkItem) {
   return Object.assign(linkItem, {
     type: linkItem.items && linkItem.items.length ? 'links' : 'link'
   })
-}
-
-/**
- * @param { Route } route
- * @param { Array<string|string[]> | Array<SidebarGroup> | [link: string]: SidebarConfig } config
- * @returns { base: string, config: SidebarConfig }
- */
-export function resolveMatchingConfig (regularPath, config) {
-  if (Array.isArray(config)) {
-    return {
-      base: '/',
-      config: config
-    }
-  }
-  for (const base in config) {
-    if (ensureEndingSlash(regularPath).indexOf(encodeURI(base)) === 0) {
-      return {
-        base,
-        config: config[base]
-      }
-    }
-  }
-  return {}
-}
-
-function ensureEndingSlash (path) {
-  return /(\.html|\/)$/.test(path)
-    ? path
-    : path + '/'
 }
 
 function resolveItem (item, pages, base, groupDepth = 1) {
