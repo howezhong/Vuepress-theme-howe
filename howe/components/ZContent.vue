@@ -24,11 +24,11 @@
         <div class="inner">
           <p v-if="prev" class="prev">
             <span>上一篇：</span>
-            <router-link v-if="prev" class="prev" :to="prev.path">{{ prev.title || prev.path }}</router-link>
+            <router-link v-if="prev" :to="prev.path" @click.native="linkToDesc(prev)">{{ prev.title || prev.path }}</router-link>
           </p>
           <p v-if="next" class="next">
             <span>下一篇：</span>
-            <router-link v-if="next" :to="next.path">{{ next.title || next.path }}</router-link>
+            <router-link v-if="next" :to="next.path" @click.native="linkToDesc(next)">{{ next.title || next.path }}</router-link>
           </p>
         </div>
       </div>
@@ -37,7 +37,7 @@
   </div>
 </template>
 <script>
-import { FormatDate, DateFormat, ForEach, storeGet, storeRemove } from '@/utils/tools'
+import { FormatDate, DateFormat, ForEach, storeGet, storeRemove, storeSet } from '@/utils/tools'
 import { resolveSidebarItems } from '@/utils'
 import ZContents from '@theme/components/ZContents.vue'
 import ZValine from '@theme/components/ZValine.vue'
@@ -46,12 +46,12 @@ export default {
   name: 'ZContent',
   props: { isUnfold: Boolean },
   components: { ZContents, ZValine },
-  data() {
+  data () {
     return {
       headInfo: null
     }
   },
-  created() {
+  created () {
     this.headInfo = storeGet('key_head_info')
   },
   computed: {
@@ -127,10 +127,8 @@ export default {
     },
     sidebarItems () {
       return resolveSidebarItems(
-        this.$page,
         this.$page.regularPath,
-        this.$site,
-        this.$localePath
+        this.$site
       )
     }
   },
@@ -162,11 +160,15 @@ export default {
         + path
       )
     },
-    onDropDown() {
+    onDropDown () {
       this.$emit('on-drop-down');
+    },
+    linkToDesc (option) {
+      this.headInfo = option.frontmatter
+      storeSet('key_head_info', option.frontmatter)
     }
   },
-  destroy() {
+  destroy () {
     storeRemove('key_head_info')
   }
 }
