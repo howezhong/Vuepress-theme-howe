@@ -1,19 +1,25 @@
 #!/usr/bin/env sh
 
-# 确保脚本抛出遇到的错误
+# abort on errors
 set -e
 
-# 进入生成的文件夹
+# build
+npm run build
+
+# navigate into the build output directory
 cd ./dist
 
-# 如果是发布到自定义域名
+# if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
-# 如果发布到 https://<USERNAME>.github.io/<REPO>
+# if you are deploying to https://<USERNAME>.github.io
 git push -f git@github.com:howezhong/howe.git master
+
+# if you are deploying to gitee(https://gitee.com)
+git push -f git@gitee.com:howezhong/howe.git master
 
 cd -

@@ -8,7 +8,7 @@
     "dev": "vuepress dev docs",
     "serve": "vuepress dev docs --cache .cache --no-cache --temp .temp",
     "build": "vuepress build docs",
-    "deploy": "npm run build && bash deploy.sh",
+    "deploy": "bash deploy.sh",
     "debug": "vuepress dev -t temp --no-clear-screen --debug docs",
     "info": "npx vuepress info",
     "view-info": "vuepress view-info docs --temp .temp"
