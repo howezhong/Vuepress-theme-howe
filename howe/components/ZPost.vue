@@ -8,7 +8,7 @@
       </div>
       <div class="z-post-content">
         <div class="z-post-list" v-for="(item, i) in posts" :key="i">
-          <router-link class="z-post-title" :to="item.path" @click.native="linkToDesc(item.frontmatter)">{{item.frontmatter.title}}</router-link>
+          <a class="z-post-title" :href="item.path" @click="linkToDesc(item.frontmatter)">{{item.frontmatter.title}}</a>
           <div class="z-post-info">
             <div class="cell">
               <span class="iconfont icon-date"></span>

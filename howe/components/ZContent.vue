@@ -24,11 +24,11 @@
         <div class="inner">
           <p v-if="prev" class="prev">
             <span>上一篇：</span>
-            <router-link v-if="prev" :to="prev.path" @click.native="linkToDesc(prev)">{{ prev.title || prev.path }}</router-link>
+            <a v-if="prev" :href="prev.path" @click="linkToDesc(prev)">{{ prev.title || prev.path }}</a>
           </p>
           <p v-if="next" class="next">
             <span>下一篇：</span>
-            <router-link v-if="next" :to="next.path" @click.native="linkToDesc(next)">{{ next.title || next.path }}</router-link>
+            <a v-if="next" :href="next.path" @click="linkToDesc(next)">{{ next.title || next.path }}</a>
           </p>
         </div>
       </div>
