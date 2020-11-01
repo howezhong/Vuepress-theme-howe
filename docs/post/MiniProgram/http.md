@@ -1,7 +1,7 @@
 ---
 title: 微信小程序Http封装
 date: 2020-10-31
-update_date: 2020-10-31
+update_date: 2020-11-01
 tags:
   - request
 category: 小程序
@@ -20,32 +20,27 @@ export default class HTTP {
       'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
     }
   }
-  request(params) {
+  request({ url, data = {}, method = 'GET', header }) {
     return new Promise((resolve, reject) => {
-      const args = Object.assign(params, { resolve, reject })
-      this._request(args)
-    })
-  }
-  // 内部方法用 _ 下划线
-  _request({ url, data = {}, method = 'GET', header, resolve, reject }) {
-    wx.request({
-      url: `${config.api_root_url}${url}`,
-      method: method,
-      header: Object.assign(this._header, header),
-      data: data,
-      success: res => {
-        const code = res.statusCode.toString()
-        console.log(res)
-        if (code.startsWith('2')) {
-          resolve(res.data)
-        } else {
-          showToast(tips[res.statusCode])
-          reject(res)
+      wx.request({
+        url: `${config.api_root_url}${url}`,
+        method: method,
+        header: Object.assign(this._header, header),
+        data: data,
+        success: res => {
+          const code = res.statusCode.toString()
+          console.log(res)
+          if (code.startsWith('2')) {
+            resolve(res.data)
+          } else {
+            showToast(tips[res.statusCode])
+            reject(res)
+          }
+        },
+        fail: (err) => {
+          reject(err)
         }
-      },
-      fail: (err) => {
-        reject(err)
-      }
+      })
     })
   }
 }
@@ -90,5 +85,18 @@ homeModel.getList().then(res => {
   console.log(res)
 }).catch(err => {
   console.log(err)
+})
+
+// 如有多个请求
+wx.showLoading()
+const detail = homeModel.getDetail(bid)
+const lists = homeModel.getLists(bid)
+
+Promise.all([detail, lists]).then(res => {
+  this.setData({
+    detail: res[0],
+    lists: res[1].list
+  })
+  wx.hideLoading()
 })
 ```

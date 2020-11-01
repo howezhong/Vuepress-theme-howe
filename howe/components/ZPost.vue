@@ -18,7 +18,7 @@
               <span class="iconfont icon-category"></span>
               <span class="cell-hover" @click="getPosts(item.frontmatter.category, 'category')">{{item.frontmatter.category}}</span>
             </div>
-            <div class="post-list-tag">
+            <div class="post-list-tag" v-if="item.frontmatter.tags&&item.frontmatter.tags.length">
               <span class="iconfont icon-tags"></span>
               <span class="cell-hover" v-for="(tag, i) in item.frontmatter.tags" @click="getPosts(tag, 'tags')" :key="i">{{tag}}</span>
             </div>
@@ -76,7 +76,7 @@ export default {
           const { year, month } = DateFormat(date)
           return year === options.year && month === options.month
         } else if (key === 'tags') {
-          return tags.findIndex(item => item.toUpperCase() == options.toUpperCase()) > -1
+          return (tags || []).findIndex(item => item.toUpperCase() == options.toUpperCase()) > -1
         } else if (key === 'category') {
           return category === options
         }

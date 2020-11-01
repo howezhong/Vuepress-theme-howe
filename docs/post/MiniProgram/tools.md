@@ -3,7 +3,6 @@ title: 微信小程序Tools封装
 date: 2020-10-31
 update_date: 2020-10-31
 tags:
-  - js
   - tools
 category: 小程序
 ---
