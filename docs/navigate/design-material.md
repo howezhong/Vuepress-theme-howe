@@ -34,4 +34,7 @@ books:
   - title: svgtrick
     link: http://svgtrick.com/
     desc: svg的使用经验、技巧、以及教程
+  - title: 搜图导航
+    link: https://www.91sotu.com/
+    desc: 以最快的速度获取想要的资源
 ---

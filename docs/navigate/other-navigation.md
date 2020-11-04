@@ -33,4 +33,10 @@ books:
   - title: 牛逼canvas案例
     link: https://bruno-simon.com/
     desc: 真的厉害
+  - title: wallhaven
+    link: https://wallhaven.cc/
+    desc: 美图鉴赏
+  - title: Hi健身动作库
+    link: https://www.hiyd.com/dongzuo/
+    desc: 健身指南
 ---

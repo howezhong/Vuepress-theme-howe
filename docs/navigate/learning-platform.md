@@ -42,4 +42,9 @@ books:
     link: https://edabit.com/challenges
   - title: freecodecamp中文社区
     link: https://www.freecodecamp.one/
+  - title: 高教书苑
+    link: https://ebook.hep.com.cn/ebooks/index.html#/
+    desc: 高等教育出版社
+  - title: 全历史
+    link: https://www.allhistory.com/
 ---
