@@ -10,5 +10,3 @@ docx
 
 yarn.lock
 package-lock.json
-
-secret.js
