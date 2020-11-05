@@ -59,6 +59,7 @@ export default {
       return this.$site.pages.filter(page => {
         const { isHide, date } = page.frontmatter
         if (isHide || !date) return
+        page.path = this.$site.base + page.path
         return page
       })
     }

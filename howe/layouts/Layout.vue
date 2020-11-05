@@ -50,7 +50,6 @@ export default {
     },
     toggleSidebar (to) {
       this.isSidebarOpen = !this.isSidebarOpen
-      console.log(to, this.isSidebarOpen)
     }
   },
   provide () {
