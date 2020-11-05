@@ -2,8 +2,8 @@
   <div class="z-content-wrapper">
     <zContents :class="isUnfold&&'open'" @click.native="onDropDown" />
     <div class="contents" :class="contents&&'is-left'">
-      <div v-if="headInfo" class="contents-head">
-        <h2 class="title">{{headInfo.title}}</h2>
+      <div class="contents-head">
+        <h2 class="title">{{$frontmatter.title}}</h2>
       </div>
       <Content class="howe-content" />
       <footer class="page-edit">
@@ -24,11 +24,11 @@
         <div class="inner">
           <p v-if="prev" class="prev">
             <span>上一篇：</span>
-            <a v-if="prev" :href="prev.path" @click="linkToDesc(prev)">{{ prev.title || prev.path }}</a>
+            <a v-if="prev" :href="base + prev.path">{{ prev.title || prev.path }}</a>
           </p>
           <p v-if="next" class="next">
             <span>下一篇：</span>
-            <a v-if="next" :href="next.path" @click="linkToDesc(next)">{{ next.title || next.path }}</a>
+            <a v-if="next" :href="base + next.path">{{ next.title || next.path }}</a>
           </p>
         </div>
       </div>
@@ -37,7 +37,7 @@
   </div>
 </template>
 <script>
-import { FormatDate, DateFormat, ForEach, storeGet, storeRemove, storeSet } from '@/utils/tools'
+import { FormatDate, DateFormat } from '@/utils/tools'
 import { resolveSidebarItems } from '@/utils'
 import ZContents from '@theme/components/ZContents.vue'
 import ZValine from '@theme/components/ZValine.vue'
@@ -46,15 +46,11 @@ export default {
   name: 'ZContent',
   props: { isUnfold: Boolean },
   components: { ZContents, ZValine },
-  data () {
-    return {
-      headInfo: null
-    }
-  },
-  created () {
-    this.headInfo = storeGet('key_head_info')
-  },
   computed: {
+    base() {
+      const base = this.$site.base
+      return base ? base.substring(0, base.length - 1) : ''
+    },
     contents () {
       let lists = this.$page.headers || []
       return lists.length > 0
@@ -162,14 +158,7 @@ export default {
     },
     onDropDown () {
       this.$emit('on-drop-down');
-    },
-    linkToDesc (option) {
-      this.headInfo = option.frontmatter
-      storeSet('key_head_info', option.frontmatter)
     }
-  },
-  destroy () {
-    storeRemove('key_head_info')
   }
 }
 function resolvePrev (page, items) {
