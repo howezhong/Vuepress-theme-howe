@@ -20,7 +20,7 @@ module.exports = {
   ],
   markdown: {
     // 是否在每个代码块的左侧显示行号
-    lineNumbers: false
+    lineNumbers: true
   },
   theme: path.resolve(__dirname, '../../howe'),
   themeConfig: {
