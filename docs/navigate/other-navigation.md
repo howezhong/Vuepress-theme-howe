@@ -3,6 +3,12 @@ bookmark: true
 title: 其它导航
 level: 7
 books:
+  - title: 国家企业信用信息公示系统
+    link: http://www.gsxt.gov.cn/index.html
+    desc: 查看这个公司是否合规
+  - title: IT桔子
+    link: https://www.itjuzi.com/
+    desc: 找好公司, 看公司融资, 判断这个公司有没有前景
   - title: 网易公开课
     link: https://open.163.com/
   - title: 中国大学MOOC
