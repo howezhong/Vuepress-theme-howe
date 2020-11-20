@@ -64,6 +64,6 @@ export default {
 @import '~@/styles/variable';
 .layout-wrapper {
   height: 100%;
-  background-color: $main-bj-color;
+  background-color: $main-bg-color;
 }
 </style>

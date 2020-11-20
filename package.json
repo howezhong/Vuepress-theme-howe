@@ -27,15 +27,16 @@
   "bugs": {
     "url": "https://github.com/howezhong/Vuepress-theme-howe/issues"
   },
-  "devDependencies": {
-    "sass": "^1.28.0",
-    "sass-loader": "^10.0.5",
-    "vuepress": "^1.7.1",
-    "vue-router": "3.4.5"
-  },
   "dependencies": {
     "leancloud-storage": "^4.7.0",
     "normalize.css": "^8.0.1",
     "valine": "^1.4.14"
+  },
+  "devDependencies": {
+    "fs-extra": "^9.0.1",
+    "sass": "^1.28.0",
+    "sass-loader": "^10.0.5",
+    "vue-router": "3.4.5",
+    "vuepress": "^1.7.1"
   }
 }

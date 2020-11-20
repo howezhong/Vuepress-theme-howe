@@ -57,7 +57,7 @@ export default {
     padding: 0 1rem;
     font-size: 1.5rem;
     color: #fff;
-    background-color: $not-found-bj-color;
+    background-color: $not-found-bg-color;
     border-radius: 5px;
   }
 }

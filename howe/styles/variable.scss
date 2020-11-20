@@ -1,19 +1,18 @@
 $theme: #00adb5;
-$theme-bj-color: #f0f2f5;
 $text-color: #364f6b;
 $padding-top: 4rem;
 $space: 1rem;
 $font-color-empty: #a2a8a2;
 
 // main
-$main-bj-color: #efefef;
+$main-bg-color: #efefef;
 
 // header
 $header-height: 3rem;
 $header-zIndex: 100;
 $header-box-shadow: 6px 0px 6px 0px rgba(207, 174, 249, 0.3);
 $header-zIndex-mobile: 105;
-$header-zIndex-bj-color-mobile: #454d66;
+$header-zIndex-bg-color-mobile: #454d66;
 
 // sidebar
 $sidebar-width: 12rem;
@@ -40,14 +39,14 @@ $post-head-height: 4rem;
 $content-color-border: rgba(0, 0, 0, 0.1);
 $content-color-hover: rgba(207, 174, 249, 0.3);
 
-$lineNumbersWrapperWidth: 3.5rem;
-$codeBgColor: #282c34;
+$line-numbers-wrapper-width: 3.5rem;
+$code-bg-color: #282c34;
 
 // popup-cover
-$popup-bj-color: rgba(0, 0, 0, 0.3);
+$popup-bg-color: rgba(0, 0, 0, 0.3);
 
 // 404
-$not-found-bj-color: #007fff;
+$not-found-bg-color: #007fff;
 
 // other
 $line-color: #e5e5e5;
@@ -56,11 +55,8 @@ $page-nav-border-color: #eaecef;
 
 // media
 $sm: 414px;
-$md600: 600px;
 $md640: 640px;
-$md720: 720px;
 $md: 768px;
-$lg890: 890px;
 $lg: 960px;
 $xl1024: 1024px;
 $xl1228: 1228px;
@@ -69,3 +65,5 @@ $xl1440: 1440px;
 
 $codeLang: js, ts, typescript, html, md, vue, css, sass, scss, less, stylus, go,
   java, c, sh, yaml, py, docker, dockerfile, markup, markdown, json, php, svg;
+
+@import '~@temp/variable.scss'

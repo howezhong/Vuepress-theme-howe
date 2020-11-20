@@ -1,22 +1,31 @@
 const path = require('path')
+const fs = require('fs-extra')
 
 module.exports = (options, ctx) => {
-  const { themeConfig, siteConfig, sourceDir } = ctx
+  const { themeConfig, siteConfig, sourceDir, writeTemp } = ctx
 
   const isAlgoliaSearch = (
     themeConfig.algolia || Object
       .keys(siteConfig.locales && themeConfig.locales || {})
       .some(base => themeConfig.locales[base].algolia)
   )
-
   return {
-    // 可以添加指定页面渲染路由, 不加文件夹下必需得有README.md, 否则会是404页面,
-    // 但是这种方式下建README.md会无效
-    // async ready () {
-    //   ctx.addPage({
-    //     path: '/contact/',
-    //   })
-    // },
+    async ready () {
+      // 可以添加指定页面渲染路由, 不加文件夹下必需得有README.md, 否则会是404页面, 但是这种方式下建README.md会无效
+      // ctx.addPage({
+      //   path: '/contact/',
+      // })
+      const userPalette = path.resolve(sourceDir, '.vuepress/styles/variable.scss')
+      console.log(userPalette)
+      const userPaletteContent = fs.existsSync(userPalette)
+        ? `@import ${JSON.stringify(userPalette.replace(/[\\]+/g, '/'))};`
+        : ''
+
+      // user's variable can override theme's variable.
+      let paletteContent = '// User\'s variable\n' + (userPaletteContent || '// null')
+
+      await writeTemp('variable.scss', paletteContent)
+    },
     additionalPages: [
       { path: '/post/' },
       { path: '/navigate/' },

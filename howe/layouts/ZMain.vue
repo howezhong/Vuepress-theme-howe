@@ -54,7 +54,7 @@ export default {
 <style lang='scss' scoped>
 @import '~@/styles/variable';
 .z-main-wrapper {
-  background-color: $main-bj-color;
+  background-color: $main-bg-color;
   transition: all 0.3s ease;
 }
 .popup-cover {
@@ -65,7 +65,7 @@ export default {
   z-index: $header-zIndex;
   width: 100%;
   height: 100%;
-  background-color: $popup-bj-color;
+  background-color: $popup-bg-color;
 }
 @media screen and (max-width: $md) {
   .space-left {

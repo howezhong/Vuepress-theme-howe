@@ -1,5 +1,4 @@
 const path = require('path')
-const secret = require('./secret')
 
 module.exports = {
   base: '/howe/', // 设置站点根路径 (default /) 代码部署到github后要改, 如github.io/howe/(base: '/howe/') 注意：base 属性的值总是以 / 开始并以 / 结束
@@ -43,6 +42,13 @@ module.exports = {
         { name: '掘金', url: 'https://juejin.im/user/5aaa3302518825188038a8e9' }
       ]
     },
-    valine: secret
+    valine: {
+      appId: '8LKSqF37Lqc3pavKNd8mFLLm-gzGzoHsz',
+      appKey: 'lrdAG7gH3nwMDFK4fkQ3f2RV',
+      notify: false,
+      verify: false,
+      avatar: 'howe',
+      placeholder: '欢迎留言...'
+    }
   }
 }
