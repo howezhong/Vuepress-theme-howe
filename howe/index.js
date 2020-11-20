@@ -16,7 +16,6 @@ module.exports = (options, ctx) => {
       //   path: '/contact/',
       // })
       const userPalette = path.resolve(sourceDir, '.vuepress/styles/variable.scss')
-      console.log(userPalette)
       const userPaletteContent = fs.existsSync(userPalette)
         ? `@import ${JSON.stringify(userPalette.replace(/[\\]+/g, '/'))};`
         : ''
