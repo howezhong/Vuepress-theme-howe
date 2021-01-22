@@ -3,9 +3,12 @@ bookmark: true
 title: 设计素材
 level: 5
 books:
-  - title: 矢量图标管理
+  - title: 矢量图标库
     link: https://www.iconfont.cn/
-    desc: 阿里出名必属精品
+    desc: 阿里出品
+  - title: IconPark图标库
+    link: https://iconpark.bytedance.com/
+    desc: 字节出品
   - title: svg图标
     link: https://iconsvg.xyz/
     desc: 可自定义的svg图标，你值得拥有
@@ -37,4 +40,7 @@ books:
   - title: 搜图导航
     link: https://www.91sotu.com/
     desc: 以最快的速度获取想要的资源
+  - title: 正版图库直通车
+    link: https://pic.cloud.tencent.com/
+    desc: 腾讯出品
 ---

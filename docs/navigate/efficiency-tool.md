@@ -3,6 +3,8 @@ bookmark: true
 title: 效率工具
 level: 2
 books:
+  - title: 现代化的拷贝文字
+    link: http://www.clipboardjs.cn/
   - title: 语言速查表
     link: https://devhints.io/
     desc: 中文站 http://devhints.cn/
@@ -28,4 +30,7 @@ books:
     link: https://www.toptal.com/developers/css/sprite-generator
   - title: 在线计算器
     link: https://webdemo.myscript.com/
+    desc: 不依赖flash, 不依赖其他框架
+  - title: 国家企业信用信息公示系统
+    link: http://www.gsxt.gov.cn/index.html
 ---

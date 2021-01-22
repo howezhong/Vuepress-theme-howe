@@ -47,4 +47,9 @@ books:
     desc: 高等教育出版社
   - title: 全历史
     link: https://www.allhistory.com/
+  - title: 渐变魔术
+    link: https://www.gradientmagic.com/browse
+    desc: 奇妙而独特的CSS渐变
+  - title: transform.tools
+    link: https://transform.tools/
 ---
