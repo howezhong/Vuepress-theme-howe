@@ -1,0 +1,34 @@
+{
+  "name": "vuepress-theme-howe-next",
+  "version": "0.0.1",
+  "description": "Blog theme for vuepress-next",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "serve": "vuepress dev docs --cache .cache --no-cache --temp .temp",
+    "build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
+    "debug": "vuepress dev -t temp --no-clear-screen --debug docs",
+    "info": "npx vuepress info",
+    "view-info": "vuepress view-info docs --temp .temp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howezhong/Vuepress-theme-howe.git"
+  },
+  "keywords": [
+    "vue",
+    "vuepress",
+    "theme",
+    "blog"
+  ],
+  "author": {
+    "name": "zhonghw",
+    "email": "214206783@qq.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howezhong/Vuepress-theme-howe/issues"
+  },
+  "homepage": "https://github.com/howezhong/Vuepress-theme-howe#readme"
+}
